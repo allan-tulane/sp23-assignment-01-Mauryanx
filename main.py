@@ -73,11 +73,19 @@ def longest_run_rec(mylist, key, start, end,res):
     maxVal= max(left_length, right_length, max_left_length + max_right_length)
     res.longest_size=maxVal
     return maxVal
-
-
+''''
 def longest_run_recursive(mylist, key):
     res = Result(0,0,0,False)
     return longest_run_rec(mylist, key, 0, len(mylist) - 1,res)
+''''
+
+def longest_run_recursive(mylist, key):
+    res = Result(0,0,0,False)
+    val = longest_run_rec(mylist, key, 0, len(mylist) - 1,res)
+    if len(mylist) == val;
+        res.is_entire_range = True
+    return res
+
 
 ## Feel free to add your own tests here.
 def test_longest_run():
